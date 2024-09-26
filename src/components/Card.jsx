@@ -16,9 +16,7 @@ function Card() {
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${num}/`)
-      // .get(`https://pokeapi.co/api/v2/pokemon/pikachu/`)
       .then((response) => {
-        console.log(response.data);
         setPokemon(response.data);
       })
       .catch((err) => console.error("ERROR while fetching data", err));
@@ -26,7 +24,6 @@ function Card() {
 
   const findPokemon = () => {
     const inputValue = inputRef.current.value.toLowerCase();
-    console.log(inputValue);
 
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
